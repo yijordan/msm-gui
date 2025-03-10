@@ -55,4 +55,16 @@ class DirectorsController < ApplicationController
 
     redirect_to("/directors")
   end
+  
+  def update
+    director_id = params.fetch("an_id")
+    the_director = Director.where({ :id => director_id }).at(0)
+    the_director.name = params.fetch("the_name")
+    the_director.dob = params.fetch("the_dob")
+    the_director.bio = params.fetch("the_bio")
+    the_director.image = params.fetch("the_image")
+    the_director.save
+
+    redirect_to("/directors/#{the_director.id}")
+  end
 end
