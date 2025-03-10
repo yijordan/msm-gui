@@ -28,7 +28,9 @@
 
   <div>
     <label form="bio_field">Bio</label>
-    <input id="bio_field" type="text" name="the_bio" value="<%= @the_actor.bio %>">
+    <textarea id="bio_field" type="text" name="the_bio" rows="3">
+    <%= @the_actor.bio %>
+    </textarea>
   </div>
 
   <div>
