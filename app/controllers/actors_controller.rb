@@ -41,7 +41,7 @@ class ActorsController < ApplicationController
     the_actor.dob = params.fetch("the_dob")
     the_actor.bio = params.fetch("the_bio")
     the_actor.image = params.fetch("the_image")
-    the_movie.save
+    the_actor.save
 
     redirect_to("/actors/#{the_actor.id}")
   end
